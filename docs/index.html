@@ -9,27 +9,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--
-    <link href="styles.css" type="text/css" rel="stylesheet">
-    -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.css" type="text/css" rel="stylesheet">
+    <link href="styles/styles.css" type="text/css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gradient-to-l from-yellow-500 via-red-500 to-green-500">
     <header>
-        <p>Bienvenido a mi CV</p>
+        <div class="container mx-auto">
+
+            <h1>Bienvenido a mi CV</h1>
+
+        
+        </div>
     </header>
 
     <section>
-        <button>
-            Hire me!
-        </button>
+        <div class="container mx-auto">
+            
+            <img class="float-right w-40" src="resources/mi_foto.jpg" alt="Mi foto" />
+            <p>About me</p>
+            <button>
+                Hire me !
+            </button>
 
-        <p>Elegir Materia</p>
-        <select>
-            <option>Programación web</option>
-            <option>Calculo 2</option>
-            <option>Algebra 1</option>
-        </select>
+            <p>Elegir Materia</p>
+            <select>
+                <option>Programación web</option>
+                <option>Calculo 2</option>
+                <option>Algebra 1</option>
+            </select>
+        </div>
     </section>
 
     <hr />
