@@ -16,11 +16,12 @@ function enviarConsulta() {
     departamento: depto,
     consulta: document.getElementById('consulta').value,
   }
-  /*
+  
   if (form.nombre === '') {
     alert('Por favor, ingresa un nombre.');
     return;
   }
+  /*
   if (form.apellido === '') {
     alert('Por favor, ingresa un apellido.');
     return;
