@@ -31,6 +31,7 @@
             <input
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="nombre" type="text" placeholder="Ingresa tu nombre">
+            <p id="msg_nombre" class="hidden-msg text-red-500 text-xs italic">Por favor, ingresa tu nombre.</p>
           </div>
           <div class="w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="apellido">
@@ -39,6 +40,7 @@
             <input
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="apellido" type="text" placeholder="Ingresa tu apellido">
+            <p id="msg_apellido" class="hidden-msg text-red-500 text-xs italic">Por favor, ingresa tu apellido.</p>  
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -49,6 +51,7 @@
             <input
               class="resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="email" type="email" placeholder="Ingresa tu email" autocomplete="email">
+            <p id="msg_email" class="hidden-msg text-red-500 text-xs italic">Por favor, ingresa tu e-mail.</p>
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -59,6 +62,7 @@
             <input
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="edad" type="number" placeholder="Ingresa tu edad">
+            <p id="msg_edad" class="hidden-msg text-red-500 text-xs italic">Por favor, ingresa tu edad.</p>
           </div>
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="departamento">
@@ -104,17 +108,32 @@
             <textarea
               class="resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="consulta" type="text" placeholder="Ingresa tu consulta" row="3"></textarea>
+            <p id="msg_consulta" class="hidden-msg text-red-500 text-xs italic">Por favor, escribe un poco más acerca de tu consulta.</p>
           </div>
         </div>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button id="enviar" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Enviar
         </button>
+        <div class="mt-8 flex flex-wrap -mx-3 mb-6">
+          <div class="w-full md:w-full px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email_buscar">
+              Buscar por email
+            </label>
+            <input
+              class="resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="email_buscar" type="email" placeholder="Ingresa un email para buscar" autocomplete="email">
+          </div>
+        </div>
+        <button id="buscar" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Buscar
+        </button>
+        <p id="result" class="mt-8"></p>
       </form>
     </div>
   </section>
 
   <footer></footer>
-  <script src="scripts/script.js"></script>
 </body>
 
 </html>
+<script type="text/javascript" src="scripts/script.js"></script>
