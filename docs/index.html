@@ -2,80 +2,321 @@
 <html lang="en">
 
 <head>
-    <title>Curriculum vitae</title>
+    <title>Germán Dotta CV</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Curriculum vitae">
-    <meta name="keywords" content="css curso UCU CV Curriculum vitae">
+    <meta name="description" content="Germán Dotta CV">
+    <meta name="keywords" content="css curso UCU CV Curriculum Vitae Germán Dotta">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="styles/font-awesome/css/all.min.css?ver=1.2.1" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="styles/styles.css" type="text/css" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-l from-yellow-500 via-red-500 to-green-500">
-    <header>
-        <div class="container mx-auto">
-
-            <h1>Bienvenido a mi CV</h1>
-
-        
+<body class="bg-light" id="top">
+  <header>
+    <div class="container text-center">
+      <div class="pt-4">
+        <h1 class="site-title mb-0">Germán Dotta CV</h1>
+        <div class="site-nav"> 
+          <nav>
+            <ul class="nav justify-content-center">
+              <li class="nav-item"><a class="nav-link" href="#about" title="About"><span class="menu-title">About</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#experience" title="Experience"><span class="menu-title">Experience</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#skills" title="Skills"><span class="menu-title">Skills</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#talks" title="Talks"><span class="menu-title">Talks</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#contact" title="Contact"><span class="menu-title">Contact</span></a>
+              </li>
+            </ul>
+          </nav>
         </div>
-    </header>
-
-    <section>
-        <p class="prose text-globant antialiased">german</p>
-        <div class="container mx-auto">
-            
-            <img class="float-right w-40" src="resources/mi_foto.jpg" alt="Mi foto" />
-            <p class="prose">About me</p>
-            <button>
-                Hire me !
-            </button>
-
-            <p>Elegir Materia</p>
-            <select>
-                <option>Programación web</option>
-                <option>Calculo 2</option>
-                <option>Algebra 1</option>
-            </select>
+      </div>
+    </div>
+  </header>
+  <div class="page-content">
+    <div class="container">
+      <div class="shadow-1-strong bg-white my-5" id="intro">
+        <div class="bg-info text-white">
+          <div class="cover bg-image"><img class="img-back" src="images/header-background.jpg"/>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);backdrop-filter: blur(2px);">
+              <div class="text-center p-5">
+                <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="images/mi_foto.jpg" width="160" height="160"/></div>
+                <div class="header-bio mt-3">
+                  <div data-aos="zoom-in" data-aos-delay="0">
+                    <h2 class="h1">Germán Dotta</h2>
+                    <p>Full stack developer</p>
+                  </div>
+                  <div class="mb-3" data-aos="zoom-in" data-aos-delay="200">
+                    <nav>
+                      <ul class="nav justify-content-center">
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/gdotta30" target="_blank" title="Twitter"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/gdotta" target="_blank" title="Facebook"><i class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/gdotta" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/gdotta30" target="_blank" title="Github"><i class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="window.location.href='/#contact'">
+                    Contact me
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <hr />
-
-    <section>
-        <p>Temario 2021</p>
-        <ul>
-            <li>
-                GIT
-            </li>
-            <li>
-                HTML5
-            </li>
-            <li>
-                CSS3
-            </li>
-            <li>
-                Js6
-            </li>
-        </ul>
-
-        <p>Verduras desordenadas</p>
-        <ol>
-            <li>
-                Cebolla
-            </li>
-            <li>
-                Zapallo
-            </li>
-        </ol>
-    </section>
-
-    <footer></footer>
-    <!--
-    <script src="index.js"></script>
-    -->
+      </div>
+      <div class="shadow-1-strong bg-white my-5 p-5" id="about">
+        <div>
+          <div class="row">
+            <div class="col-md-6">
+              <h2 class="h2 fw-light mb-4">About Me</h2>
+              <p>Hello! I’m Germán Dotta. I am a skilled <strong>full-stack developer</strong> being able to support your company through the use of development cutting-edge technologies and project management best practices.</p>
+              <p>Do not hesitate in contacting me for customized software needs.</p>
+            </div>
+            <div class="col-md-5 offset-lg-1">
+              <div class="row mt-2">
+                <h2 class="h2 fw-light mb-4">Info</h2>
+                <div class="col-sm-5">
+                  <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2" style="width:24px;opacity:0.85;"></i> Age</div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="pb-2">31</div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="pb-2 fw-bolder"><i class="far fa-envelope pe-2" style="width:24px;opacity:0.85;"></i> Email</div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="pb-2">gdotta30@gmail.com</div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="pb-2 fw-bolder"><i class="fab fa-skype pe-2" style="width:24px;opacity:0.85;"></i> Skype</div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="pb-2">gdotta@skype.com</div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="pb-2 fw-bolder"><i class="fas fa-phone pe-2" style="width:24px;opacity:0.85;"></i> Phone</div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="pb-2">+598 9861 0019</div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="pb-2 fw-bolder"><i class="fas fa-map-marker-alt pe-2" style="width:24px;opacity:0.85;"></i> Address</div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="pb-2">María Orticochea 4587, Montevideo, Uruguay</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
+        <div>
+          <div class="row">
+            <div class="col-md-6">
+              <h2 class="h2 fw-light mb-4">Experience</h2>
+              <p id="experience-content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-1-strong bg-white my-5 p-5" id="skills">
+        <div>
+          <h2 class="h2 fw-light mb-4">Professional Skills</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3"><span class="fw-bolder">GeneXus</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 95%;">Master</div>
+                </div>
+              </div>
+              <div class="mb-3"><span class="fw-bolder">Java</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 85%">Expert</div>
+                </div>
+              </div>
+              <div class="mb-3"><span class="fw-bolder">.Net</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 85%">Expert</div>
+                </div>
+              </div>
+              <div class="mb-3"><span class="fw-bolder">SQL</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 85%">Expert</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3"><span class="fw-bolder">HTML</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 95%">Master</div>
+                </div>
+              </div>
+              <div class="mb-3"><span class="fw-bolder">JavaScript</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 90%">Expert</div>
+                </div>
+              </div>
+              <div class="mb-3"><span class="fw-bolder">CSS</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 85%">Expert</div>
+                </div>
+              </div>
+              <div class="mb-3"><span class="fw-bolder">React</span>
+                <div class="progress rounded" style="height: 20px">
+                  <div class="progress-bar" style="width: 75%">Beginner</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-1-strong bg-white my-5 p-5" id="talks">
+        <div>
+          <div class="row">
+            <div class="col-md-5">
+              <h2 class="h2 fw-light mb-4">Talks</h2>
+              <iframe width="100%" height="240" src="https://www.youtube.com/embed/-ozr-dWxYKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-5 offset-lg-2">
+              <h2 class="h2 fw-light mb-4">&nbsp;</h2>
+              <iframe width="100%" height="240" src="https://www.youtube.com/embed/Rf6E9iqSfFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shadow-1-strong bg-white my-5 p-5" id="contact">
+        <div class="contact-section">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="h2 fw-light mb-4">Contact me</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label class="fw-bolder mb-2" for="nombre">
+                          Name
+                        </label>
+                        <input
+                          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          id="nombre" type="text" placeholder="Name">
+                        <p id="msg_nombre" class="hidden-msg text-red-500 text-xs italic">Please, enter your name.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label class="fw-bolder mb-2" for="email">
+                          Email
+                        </label>
+                        <input
+                          class="resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          id="email" type="email" placeholder="Email" autocomplete="email">
+                        <p id="msg_email" class="hidden-msg text-red-500 text-xs italic">Please, enter your email.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label class="fw-bolder mb-2" for="edad">
+                          Age
+                        </label>
+                        <input
+                          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          id="edad" type="number" placeholder="Age">
+                        <p id="msg_edad" class="hidden-msg text-red-500 text-xs italic">Please, enter your age.</p>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="fw-bolder mb-2" for="departamento">
+                          City
+                        </label>
+                        <div class="relative">
+                          <select
+                            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="departamento">
+                            <option>Artigas</option>
+                            <option>Canelones</option>
+                            <option>Cerro Largo</option>
+                            <option>Colonia</option>
+                            <option>Durazno</option>
+                            <option>Flores</option>
+                            <option>Florida</option>
+                            <option>Lavalleja</option>
+                            <option>Maldonado</option>
+                            <option selected="selected">Montevideo</option>
+                            <option>Paysandú</option>
+                            <option>Río Negro</option>
+                            <option>Rivera</option>
+                            <option>Rocha</option>
+                            <option>San José</option>
+                            <option>Salto</option>
+                            <option>Soriano</option>
+                            <option>Tacuarembó</option>
+                            <option>Treinta y Tres</option>
+                          </select>
+                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 mb-2">
+                        <label class="fw-bolder mb-2" for="consulta">
+                          Message
+                        </label>
+                        <textarea
+                          class="resize-y appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          id="consulta" type="text" placeholder="Enter your message" row="3"></textarea>
+                        <p id="msg_consulta" class="hidden-msg text-red-500 text-xs italic">Please, write a little more.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <button id="enviar" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                          Send
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="my_form_msg" id="form_msg" style="display: none;"></p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-6">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.517291583607!2d-56.216110684763905!3d-34.8432272803982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1d52fed3f672f%3A0xd9bdb540c6d2b056!2sMar%C3%ADa%20Orticochea%204587%2C%2012900%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1637548265803!5m2!1ses-419!2suy" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="pt-4 pb-4 text-center">
+    <div class="container">
+      <div class="my-3">
+        <div class="h4">Germán Dotta</div>
+      </div>
+      <div class="text-small">
+        <div class="mb-1">&copy; 2021 All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
+
+<script type="text/javascript" src="script.js"></script>

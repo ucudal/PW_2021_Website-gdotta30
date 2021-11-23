@@ -14,28 +14,12 @@ nombre.addEventListener('blur', function () {
         nombre.classList.add("focus:border-gray-500");
     }
 });
-var apellido = document.getElementById('apellido');
-apellido.addEventListener('blur', function () {
-    var elem = document.getElementById("msg_apellido");
-    if (apellido.value === '') {
-        elem.classList.remove("hidden-msg");
-        apellido.classList.add("border-red-500");
-        apellido.classList.remove("border-gray-200");
-        apellido.classList.remove("focus:border-gray-500");
-    }
-    else {
-        elem.classList.add("hidden-msg");
-        apellido.classList.remove("border-red-500");
-        apellido.classList.add("border-gray-200");
-        apellido.classList.add("focus:border-gray-500");
-    }
-});
 var email = document.getElementById('email');
 email.addEventListener('blur', function () {
     var elem = document.getElementById("msg_email");
     if (email.value === '') {
         elem.classList.remove("hidden-msg");
-        elem.innerText = 'Por favor, ingresa un email.';
+        elem.innerText = 'Please, enter your email.';
         email.classList.add("border-red-500");
         email.classList.remove("border-gray-200");
         email.classList.remove("focus:border-gray-500");
@@ -44,7 +28,7 @@ email.addEventListener('blur', function () {
         var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(email.value.toLowerCase())) {
             elem.classList.remove("hidden-msg");
-            elem.innerText = 'Por favor, ingresa un email válido.';
+            elem.innerText = 'Please, enter a valid email.';
             email.classList.add("border-red-500");
             email.classList.remove("border-gray-200");
             email.classList.remove("focus:border-gray-500");
@@ -96,14 +80,13 @@ function enviarConsulta() {
     var select = document.getElementById('departamento');
     var depto = select.options[select.selectedIndex].text;
     var form = {
-        nombre: nombre.value,
-        apellido: apellido.value,
+        nombreContacto: nombre.value,
         email: email.value,
         edad: edad.value,
         departamento: depto,
         consulta: consulta.value
     };
-    if (form.nombre === '') {
+    if (form.nombreContacto === '') {
         var elem = document.getElementById("msg_nombre");
         elem.classList.remove("hidden-msg");
         nombre.classList.add("border-red-500");
@@ -111,18 +94,10 @@ function enviarConsulta() {
         nombre.classList.remove("focus:border-gray-500");
         return;
     }
-    if (form.apellido === '') {
-        var elem = document.getElementById("msg_apellido");
-        elem.classList.remove("hidden-msg");
-        apellido.classList.add("border-red-500");
-        apellido.classList.remove("border-gray-200");
-        apellido.classList.remove("focus:border-gray-500");
-        return;
-    }
     if (form.email === '') {
         var elem = document.getElementById("msg_email");
         elem.classList.remove("hidden-msg");
-        elem.innerText = 'Por favor, ingresa un email.';
+        elem.innerText = 'Please, enter your email.';
         email.classList.add("border-red-500");
         email.classList.remove("border-gray-200");
         email.classList.remove("focus:border-gray-500");
@@ -132,7 +107,7 @@ function enviarConsulta() {
     if (!re.test(form.email.toLowerCase())) {
         var elem = document.getElementById("msg_email");
         elem.classList.remove("hidden-msg");
-        elem.innerText = 'Por favor, ingresa un email válido.';
+        elem.innerText = 'Please, enter a valid email.';
         email.classList.add("border-red-500");
         email.classList.remove("border-gray-200");
         email.classList.remove("focus:border-gray-500");
@@ -154,34 +129,100 @@ function enviarConsulta() {
         consulta.classList.remove("focus:border-gray-500");
         return;
     }
-    consultas.push(form);
-    limpiar();
-    console.log('consultas', consultas);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'https://PW2021-APINode-gdotta30-6.germandotta.repl.co/enviar-formulario', true);
+    xhr.withCredentials = true;
+    xhr.crossDomain = true;
+    xhr.setRequestHeader("Content-Type", "application/json");
+    
+    xhr.onreadystatechange = function() { // Call a function when the state changes.
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            
+            setCookie("PW_2021-CV_Contacto", form.nombreContacto, 365);
+            
+            /* No me funco.
+            console.log(xhr.getAllResponseHeaders());
+            if (xhr.getAllResponseHeaders().indexOf("Set-Cookie") >= 0) {
+                console.log("header:", xhr.getResponseHeader("Set-Cookie"));
+              }
+
+            var cookie = xhr.getResponseHeader("PW_2021-CV_Contacto");
+            console.log(cookie);
+            */
+            
+            document.getElementById('form_msg').style.display = 'block';
+            document.getElementById('form_msg').innerHTML = this.responseText;
+
+            limpiar();
+        }
+    }
+    xhr.send(JSON.stringify(form));
 }
 function limpiar() {
     nombre.value = '';
-    apellido.value = '';
     email.value = '';
     edad.value = '';
     var select = document.getElementById('departamento');
     select.selectedIndex = 9;
     consulta.value = '';
+    rememberUser();
 }
-var buttonBuscar = document.getElementById('buscar');
-buttonBuscar.addEventListener('click', buscarUsuario);
-function buscarUsuario() {
-    var res = document.getElementById('result');
-    res.innerText = '';
-    var searchEmail = document.getElementById('email_buscar');
-    if (searchEmail.value === '') {
-        res.innerText = 'Ingresa un email para buscar';
-        return;
-    }
-    var result = consultas.filter(function (usuario) { return usuario.email.toLowerCase() === searchEmail.value.toLowerCase(); });
-    if (result.length === 0) {
-        res.innerText = 'Usuario no encontrado';
-    }
-    else {
-        res.innerText = 'Encontrado!! : ' + result[0].nombre + ' ' + result[0].apellido;
+
+function getExperiencia() {
+    fetch('https://PW2021-APINode-gdotta30-6.germandotta.repl.co/experiencia-laboral', {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then(res => res.json())
+    .then(res => {
+        var html = '<ul style="list-style-type:circle">';
+        for(var i = 0; i < res['experiencia-laboral'].length; i++) {
+            var obj = res['experiencia-laboral'][i];
+            html += '<li>'+
+                        '<div class="pb-2 fw-bolder">'+obj.empresa+'</div>'+
+                        '<div>'+obj.puesto+'</div>'+
+                        '<div>'+'From: '+obj.fechaInicio+' To: '+obj.fechaFin+'</div>'+
+                    '</li>';
+        }
+        html += '</ul>';
+        document.getElementById("experience-content").innerHTML = html;
+        }
+    )
+    .catch( err => console.error(err));
+}
+
+window.onload = function() {
+    getExperiencia();
+    rememberUser();
+}
+
+function rememberUser(){
+    let user = getCookie("PW_2021-CV_Contacto");
+    if (user != '') {
+        document.getElementById('nombre').value = user;
     }
 }
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
